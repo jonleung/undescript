@@ -6,9 +6,9 @@ class AnalyticsSlide < ActiveRecord::Base
 
   inherits_from :slide
   
-  PATH_TO_IMAGE = "../../tmp/chart.png"
+  PATH_TO_IMAGE = "public/images/chart.png"
   
-  def connect
+  def self.connect
     pass = File.open("/Users/awbraunstein/code/pass.txt")
     password = ""
     unless pass.nil?
@@ -20,7 +20,7 @@ class AnalyticsSlide < ActiveRecord::Base
     return profile.exits(:filters => {:medium.eql => 'referral'})
   end
 
-  def draw(anal)
+  def self.draw(anal)
     @title = "chart"
     @legend = []
     @data = []
@@ -33,10 +33,17 @@ class AnalyticsSlide < ActiveRecord::Base
     chart.file
   end
 
-  def run
-    AnalyticsSlide.draw(AnalyticsSlide.conect)
-    return PATH_TO_IMAGE
+  def self.run
+    n = self.connect
+    self.draw(n)
+    return "chart.png"
   end
   
   
+end
+
+class Exits
+  extend Garb::Model
+  dimensions :source
+  metrics :pageviews
 end
