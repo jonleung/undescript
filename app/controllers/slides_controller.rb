@@ -13,7 +13,9 @@ class SlidesController < ApplicationController
   # GET /slides/1
   # GET /slides/1.xml
   def show
-    @slide = Slide.find(params[:id])
+    @slide_subtype = Slide.find(params[:id])
+    @slide = @slide_subtype.slide
+    @slideshow = Slideshow.find(@slide.slideshow_id)
 
     respond_to do |format|
       format.html # show.html.erb
@@ -45,7 +47,13 @@ class SlidesController < ApplicationController
 
   # GET /slides/1/edit
   def edit
-    @slide = Slide.find(params[:id])
+    
+    
+    @slide_subtype = Slide.find(params[:id])
+    @slide = @slide_subtype.slide
+    
+    @slideshow = Slideshow.find(@slide.slideshow_id) 
+        
   end
 
   # POST /slides
@@ -112,8 +120,11 @@ class SlidesController < ApplicationController
   # DELETE /slides/1
   # DELETE /slides/1.xml
   def destroy
-    @slide = Slide.find(params[:id])
+    @slide_subtype = Slide.find(params[:id])
+    @slide = @slide_subtype.slide
     @slide.destroy
+    @slide_subtype.destroy
+
 
     respond_to do |format|
       format.html { redirect_to(slides_url) }
