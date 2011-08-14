@@ -1,4 +1,16 @@
 Slidefeed::Application.routes.draw do
+  resources :rss_slides
+
+  resources :video_slides
+
+  resources :image_slides
+
+  resources :text_slides
+
+  resources :slides
+
+  resources :slideshows
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
