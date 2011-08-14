@@ -13,8 +13,17 @@ class SlideshowsController < ApplicationController
   # GET /slideshows/1
   # GET /slideshows/1.xml
   def show
+    
     @slideshow = Slideshow.find(params[:id])
-
+    
+    
+    
+    if @slideshow.slide_order_hash.present?
+      @first_slide = Slide.find(@slideshow.slide_order_hash[1])
+    else
+      @first_slide = nil
+    end
+      
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @slideshow }
@@ -41,7 +50,7 @@ class SlideshowsController < ApplicationController
   # POST /slideshows.xml
   def create
     @slideshow = Slideshow.new(params[:slideshow])
-
+    @slideshow.slide_order_hash = {}
     respond_to do |format|
       if @slideshow.save
         format.html { redirect_to(@slideshow, :notice => 'Slideshow was successfully created.') }

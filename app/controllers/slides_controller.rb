@@ -24,8 +24,19 @@ class SlidesController < ApplicationController
   # GET /slides/new
   # GET /slides/new.xml
   def new
-    @slide = Slide.new
-
+    @slideshow = Slideshow.find(params[:slideshow_id])
+    
+    debugger
+    
+    if @slideshow.slide_order_hash.present?
+      @first_slide = Slide.find(@slideshow.slide_order_hash[1])
+      @first_slide = @first_slide.slide
+    else
+      @first_slide = nil
+    end
+      
+    @slide = @slideshow.slides.new
+    
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @slide }
@@ -40,11 +51,40 @@ class SlidesController < ApplicationController
   # POST /slides
   # POST /slides.xml
   def create
-    @slide = Slide.new(params[:slide])
-
+    
+    slideshow_id = params[:slideshow_id]
+    slideshow = Slideshow.find(slideshow_id)
+    
+    type = params[:slide][:type]
+    title = params[:slide][:title]
+    duration = params[:slide][:duration]
+    text = params[:text]
+    
+    if type == "text"
+      @slide = TextSlide.new
+      @slide.html = text
+    elsif type == "image"
+      @slide = ImageSlide.new
+      @slide.image_url = text
+    elsif type == "video"
+      @slide = VideoSlide.new
+      @slide.video_url = text
+    elsif type == "rss"
+      @slide = RssSlide.new
+      @slide.rss_url = text
+    elsif type == "analytics"
+      LOG.info("ERROR\tthere is nothing in analytics yet error")
+    else
+      LOG.info("ERROR\tNEW SLIDE does not fit in a type")
+    end
+    
+    @slide.title = title
+    @slide.duration = duration
+    @slide.slideshow_id = slideshow_id
+    
     respond_to do |format|
       if @slide.save
-        format.html { redirect_to(@slide, :notice => 'Slide was successfully created.') }
+        format.html { redirect_to :back}#(@slide, :notice => 'Slide was successfully created.') }
         format.xml  { render :xml => @slide, :status => :created, :location => @slide }
       else
         format.html { render :action => "new" }

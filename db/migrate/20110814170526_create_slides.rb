@@ -2,6 +2,7 @@ class CreateSlides < ActiveRecord::Migration
   def self.up
     create_table :slides do |t|
       t.references :slideshow
+      t.string :subtype
       t.string :title
       t.integer :duration
 

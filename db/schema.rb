@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(:version => 20110814170857) do
 
   create_table "slides", :force => true do |t|
     t.integer  "slideshow_id"
+    t.string   "subtype"
     t.string   "title"
     t.integer  "duration"
     t.datetime "created_at"
