@@ -1,7 +1,6 @@
 class Slide < ActiveRecord::Base
-  
+  acts_as_superclass  
   belongs_to :slideshow
-  acts_as_superclass
   
   after_save :add_to_slideshow_hash
   

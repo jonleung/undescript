@@ -4,7 +4,7 @@ require 'imgur'
 class ImageSlide < ActiveRecord::Base
   inherits_from :slide
 
-  def upload_file
+  def run
     api_key = "1dcdf80fee0df552a19d255e1fd06c6a"
     imgur = Imgur::API.new(api_key)
     return imgur.upload_from_url(image_url)

@@ -8,18 +8,19 @@ class AnalyticsSlide < ActiveRecord::Base
   
   PATH_TO_IMAGE = "../../tmp/chart.png"
   
-  def self.connect
+  def connect
     pass = File.open("/Users/awbraunstein/code/pass.txt")
     password = ""
     unless pass.nil?
       password  = pass.readline.gsub(/\n/, "");
     end
     Garb::Session.login("awbraunstein@gmail.com", password)
-    profile = Garb::Management::Profile.all.detect {|p| p.web_property_id == 'UA-23858586-1'}
+    property =  'UA-23858586-1'
+    profile = Garb::Management::Profile.all.detect {|p| p.web_property_id == property}
     return profile.exits(:filters => {:medium.eql => 'referral'})
   end
 
-  def self.draw(anal)
+  def draw(anal)
     @title = "chart"
     @legend = []
     @data = []
@@ -32,7 +33,7 @@ class AnalyticsSlide < ActiveRecord::Base
     chart.file
   end
 
-  def self.run
+  def run
     AnalyticsSlide.draw(AnalyticsSlide.conect)
     return PATH_TO_IMAGE
   end
