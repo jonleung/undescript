@@ -10,12 +10,26 @@ class SlidesController < ApplicationController
     end
   end
 
+  def get_next_slide_id(slideshow, cur_num)
+    hash = slideshow.slide_order_hash
+    if hash[cur_num+1].present?
+      return cur_num+1
+    else
+      return 1
+    end
+  end
+
   # GET /slides/1
   # GET /slides/1.xml
   def show
+     
     @slide_subtype = Slide.find(params[:id])
     @slide = @slide_subtype.slide
     @slideshow = Slideshow.find(@slide.slideshow_id)
+        
+    session[:slideshow_states][@slideshow.id] = get_next_slide_id(@slideshow, session[:slideshow_states][@slideshow.id])    
+    @next_slide_subtype = Slide.find(session[:slideshow_states][@slideshow.id])
+    @next_slide = @next_slide_subtype.slide
 
     respond_to do |format|
       format.html # show.html.erb
@@ -27,8 +41,6 @@ class SlidesController < ApplicationController
   # GET /slides/new.xml
   def new
     @slideshow = Slideshow.find(params[:slideshow_id])
-    
-    debugger
     
     if @slideshow.slide_order_hash.present?
       @first_slide = Slide.find(@slideshow.slide_order_hash[1])

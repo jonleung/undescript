@@ -10,7 +10,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110814170857) do
+ActiveRecord::Schema.define(:version => 20110814201735) do
+
+  create_table "analytics_slides", :id => false, :force => true do |t|
+    t.integer  "slide_id",   :null => false
+    t.string   "username"
+    t.string   "password"
+    t.string   "property"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "image_slides", :id => false, :force => true do |t|
     t.integer  "slide_id",   :null => false

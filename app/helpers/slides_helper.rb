@@ -12,8 +12,4 @@ module SlidesHelper
     end
   end
   
-  def next_slide(slideshow, slide)
-    hash = slideshow.slide_order_hash
-  end
-  
 end
