@@ -15,6 +15,9 @@ module SlidesHelper
       return 'analytics_slide'
     end
   end
-  
+
+  def video_url2(url)
+    youtube_id = /.*?v=(.*)&/.match(url)[1]
+  end
 end
 

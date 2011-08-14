@@ -1,1 +1,9 @@
-<%= @slide_subtype.html %>
+<object style="height: 390px; width: 640px">
+<param name="movie"
+       value="http://www.youtube.com/v/<%=video_url2(@slide_subtype.video_url)%>?version=3">
+<param name="allowFullScreen" value="true" autoplay="1">
+<param name="allowScriptAccess" value="always">
+<embed src="http://www.youtube.com/v/<%=video_url2(@slide_subtype.video_url)%>?version=3"
+       type="application/x-shockwave-flash" allowfullscreen="true"
+       allowScriptAccess="always" width="640" height="390" autoplay="1">
+</object>
