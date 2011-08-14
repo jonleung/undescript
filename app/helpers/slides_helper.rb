@@ -9,6 +9,8 @@ module SlidesHelper
       return 'video_slide'
     elsif slide_subtype.class == RssSlide
       return 'rss_slide'
+    elsif slide_subtype.class == WebSlide
+      return 'web_slide'
     elsif slide_subtype.class == AnalyticsSlide
       return 'analytics_slide'
     end

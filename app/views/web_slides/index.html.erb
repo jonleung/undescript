@@ -1,0 +1,23 @@
+<h1>Listing web_slides</h1>
+
+<table>
+  <tr>
+    <th>Site url</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @web_slides.each do |web_slide| %>
+  <tr>
+    <td><%= web_slide.site_url %></td>
+    <td><%= link_to 'Show', web_slide %></td>
+    <td><%= link_to 'Edit', edit_web_slide_path(web_slide) %></td>
+    <td><%= link_to 'Destroy', web_slide, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Web slide', new_web_slide_path %>

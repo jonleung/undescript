@@ -1,5 +1,7 @@
 Slidefeed::Application.routes.draw do
   
+  
+
   root :to => "home#index"
   
   resources :slideshows do
@@ -12,6 +14,7 @@ Slidefeed::Application.routes.draw do
   resources :text_slides
   resources :analytics_slides
   resources :rss_slides
+  resources :web_slides
   
 
 
