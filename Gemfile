@@ -16,7 +16,7 @@ gem 'twitter'
 gem 'simple-rss'
 # gem 'json'
 # gem 'twitter'
-gem 'ruby-debug'
+# gem 'ruby-debug'
 # Use unicorn as the web server
 # gem 'unicorn'
 
