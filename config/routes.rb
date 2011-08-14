@@ -4,6 +4,7 @@ Slidefeed::Application.routes.draw do
   
   resources :slideshows do
       resources :slides
+      get 'start', :on => :member
   end
 
   resources :video_slides

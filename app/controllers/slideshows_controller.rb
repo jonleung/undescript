@@ -14,35 +14,47 @@ class SlideshowsController < ApplicationController
 {1=>31}
 {1=>31,2=>32}
 =end
-  
-  def get_next_slide_id(slideshow, cur_num)
-    hash = slideshow.slide_order_hash
-    if hash[cur_num+1].present?
-      return cur_num+1
-    else
-      
-    end
-  end
 
   # GET /slideshows/1
   # GET /slideshows/1.xml
   def show
-    
+        
     @slideshow = Slideshow.find(params[:id])
     
     if @slideshow.slide_order_hash.present?
       @first_slide = Slide.find(@slideshow.slide_order_hash[1])
-      session[:slideshow_states][@slideshow.id] = 1
     else
       @first_slide = nil
     end
-    
-    @next_slide_id = get_next_slide_id(@slideshow, session[:slideshow_states][@slideshow.id])    
     
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @slideshow }
     end
+  end
+  
+  def start
+    
+    @slideshow = Slideshow.find(params[:id])
+    first_slide = @slideshow.slide_order_hash[1]
+    
+    if first_slide.nil?
+      redirect_to :back
+      LOG.info("you don't have any slides")
+      return
+    end
+  
+    if session[:slideshow_states].nil?
+      session[:slideshow_states] = []
+    end
+    if session[:slideshow_states][@slideshow.id].nil?
+      session[:slideshow_states][@slideshow.id] = 1
+    end
+    
+    debugger
+    
+    redirect_to slideshow_slide_path(@slideshow, first_slide)
+    
   end
 
   # GET /slideshows/new
