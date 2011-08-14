@@ -9,6 +9,8 @@ gem 'sqlite3'
 gem 'imgur'
 gem 'class-table-inheritance'
 gem 'ruby-growl'
+gem 'googlecharts'
+gem 'garb'
 # Use unicorn as the web server
 # gem 'unicorn'
 

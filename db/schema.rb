@@ -12,13 +12,15 @@
 
 ActiveRecord::Schema.define(:version => 20110814170857) do
 
-  create_table "image_slides", :force => true do |t|
+  create_table "image_slides", :id => false, :force => true do |t|
+    t.integer  "slide_id",   :null => false
     t.string   "image_url"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "rss_slides", :force => true do |t|
+  create_table "rss_slides", :id => false, :force => true do |t|
+    t.integer  "slide_id",   :null => false
     t.string   "rss_url"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -39,13 +41,15 @@ ActiveRecord::Schema.define(:version => 20110814170857) do
     t.datetime "updated_at"
   end
 
-  create_table "text_slides", :force => true do |t|
+  create_table "text_slides", :id => false, :force => true do |t|
+    t.integer  "slide_id",   :null => false
     t.string   "html"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "video_slides", :force => true do |t|
+  create_table "video_slides", :id => false, :force => true do |t|
+    t.integer  "slide_id",   :null => false
     t.string   "video_url"
     t.datetime "created_at"
     t.datetime "updated_at"
