@@ -34,6 +34,7 @@ GEM
     class-table-inheritance (1.2.1)
     columnize (0.3.4)
     crack (0.1.8)
+    curb (0.7.15)
     erubis (2.6.6)
       abstract (>= 1.0.0)
     faraday (0.6.1)
@@ -48,6 +49,9 @@ GEM
     googlecharts (1.6.7)
     hashie (1.0.0)
     i18n (0.5.0)
+    imgur (0.2.0)
+      crack (>= 0.1.4)
+      curb (>= 0.5.4.0)
     json (1.5.3)
     linecache (0.46)
       rbx-require-relative (> 0.0.4)
@@ -112,6 +116,7 @@ DEPENDENCIES
   class-table-inheritance
   garb
   googlecharts
+  imgur
   json
   oauth
   rails (= 3.0.9)

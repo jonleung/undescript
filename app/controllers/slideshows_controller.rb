@@ -51,7 +51,7 @@ class SlideshowsController < ApplicationController
     session[:slideshow_states][@slideshow.id] = 1
     
     
-    # debugger
+
     
     redirect_to slideshow_slide_path(@slideshow, first_slide)
     
