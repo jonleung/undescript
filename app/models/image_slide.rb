@@ -1,13 +1,14 @@
-require 'rubygems'
-require 'imgur'
+# require 'rubygems'
+# require 'imgur'
 
 class ImageSlide < ActiveRecord::Base
   inherits_from :slide
 
   def run
-    api_key = "1dcdf80fee0df552a19d255e1fd06c6a"
-    imgur = Imgur::API.new(api_key)
-    return imgur.upload_from_url(image_url)
+    return image_url
+    # api_key = "1dcdf80fee0df552a19d255e1fd06c6a"
+    # imgur = Imgur::API.new(api_key)
+    # return imgur.upload_from_url(image_url)
     # if is_url
     #   return imgur.upload_from_url(path)["original_image"]
     # else
