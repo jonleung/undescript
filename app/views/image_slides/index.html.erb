@@ -1,0 +1,23 @@
+<h1>Listing image_slides</h1>
+
+<table>
+  <tr>
+    <th>Image url</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @image_slides.each do |image_slide| %>
+  <tr>
+    <td><%= image_slide.image_url %></td>
+    <td><%= link_to 'Show', image_slide %></td>
+    <td><%= link_to 'Edit', edit_image_slide_path(image_slide) %></td>
+    <td><%= link_to 'Destroy', image_slide, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Image slide', new_image_slide_path %>

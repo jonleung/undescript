@@ -1,0 +1,2 @@
+module RssSlidesHelper
+end

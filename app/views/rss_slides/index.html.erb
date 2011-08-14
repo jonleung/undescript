@@ -1,0 +1,23 @@
+<h1>Listing rss_slides</h1>
+
+<table>
+  <tr>
+    <th>Rss url</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @rss_slides.each do |rss_slide| %>
+  <tr>
+    <td><%= rss_slide.rss_url %></td>
+    <td><%= link_to 'Show', rss_slide %></td>
+    <td><%= link_to 'Edit', edit_rss_slide_path(rss_slide) %></td>
+    <td><%= link_to 'Destroy', rss_slide, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Rss slide', new_rss_slide_path %>

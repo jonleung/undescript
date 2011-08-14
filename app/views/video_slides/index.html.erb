@@ -1,0 +1,23 @@
+<h1>Listing video_slides</h1>
+
+<table>
+  <tr>
+    <th>Video url</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @video_slides.each do |video_slide| %>
+  <tr>
+    <td><%= video_slide.video_url %></td>
+    <td><%= link_to 'Show', video_slide %></td>
+    <td><%= link_to 'Edit', edit_video_slide_path(video_slide) %></td>
+    <td><%= link_to 'Destroy', video_slide, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Video slide', new_video_slide_path %>

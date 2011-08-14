@@ -1,0 +1,9 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  slide_order_hash: MyText
+
+two:
+  name: MyString
+  slide_order_hash: MyText
