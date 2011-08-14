@@ -5,11 +5,22 @@ class RssSlide < ActiveRecord::Base
   
   inherits_from :slide
 
+  @feed_title = ""
+  @feed_topics = []
   def run
     rss = SimpleRSS.parse open(rss_url)
+    @feed_title = rss.channel.title
+    rss.items.each do |t|
+      @feed_topics += [t[:title]]
+    end
+    puts @feed_topics
+  end
 
-    {'title' => rss.channel.title, "suheadings" => {'item0' => rss.items[0].title, 'item1' => rss.items[1].title, 'item2' => rss.items[2].title, 'item3' => rss.items[3].title, 'item4' => rss.items[4].title}}
-    
+  def get_title
+    @feed_title
+  end
+  def get_topics
+    @feed_topics
   end
   
 end

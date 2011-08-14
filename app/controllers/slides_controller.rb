@@ -96,6 +96,9 @@ class SlidesController < ApplicationController
     elsif type == "video"
       @slide = VideoSlide.new
       @slide.video_url = text
+    elsif type == "web"
+      @slide = WebSlide.new
+      @slide.site_url = text
     elsif type == "rss"
       @slide = RssSlide.new
       @slide.rss_url = text
