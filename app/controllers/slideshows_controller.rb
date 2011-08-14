@@ -9,6 +9,20 @@ class SlideshowsController < ApplicationController
       format.xml  { render :xml => @slideshows }
     end
   end
+  
+=begin
+{1=>31}
+{1=>31,2=>32}
+=end
+  
+  def get_next_slide_id(slideshow, cur_num)
+    hash = slideshow.slide_order_hash
+    if hash[cur_num+1].present?
+      return cur_num+1
+    else
+      
+    end
+  end
 
   # GET /slideshows/1
   # GET /slideshows/1.xml
@@ -16,14 +30,15 @@ class SlideshowsController < ApplicationController
     
     @slideshow = Slideshow.find(params[:id])
     
-    
-    
     if @slideshow.slide_order_hash.present?
       @first_slide = Slide.find(@slideshow.slide_order_hash[1])
+      session[:slideshow_states][@slideshow.id] = 1
     else
       @first_slide = nil
     end
-      
+    
+    @next_slide_id = get_next_slide_id(@slideshow, session[:slideshow_states][@slideshow.id])    
+    
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @slideshow }

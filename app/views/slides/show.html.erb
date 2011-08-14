@@ -12,7 +12,10 @@
 <p>
 	<%= render :partial => render_subtype_partial(@slide_subtype), :object => @slide_subtype %>
 </p>
-<%= link_to 'Next Slide', slideshow_slide_path(@slideshow, next_slide(@slideshow, @slide)) %>
+
+<% if @slideshow.slide_order_hash[2].present? %>
+	<%= link_to 'Next Slide', slideshow_slide_path(@slideshow, next_slide(@slideshow, @slide)) %>
+<% end %>
 
 <%= link_to 'Edit', edit_slideshow_slide_path(@slideshow, @slide) %> |
 <%= link_to 'Back', slideshow_slides_path(@slideshow) %>
