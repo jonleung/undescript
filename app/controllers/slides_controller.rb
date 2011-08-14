@@ -26,10 +26,17 @@ class SlidesController < ApplicationController
     @slide_subtype = Slide.find(params[:id])
     @slide = @slide_subtype.slide
     @slideshow = Slideshow.find(@slide.slideshow_id)
-        
+    
+    # debugger
+    
     session[:slideshow_states][@slideshow.id] = get_next_slide_id(@slideshow, session[:slideshow_states][@slideshow.id])    
-    @next_slide_subtype = Slide.find(session[:slideshow_states][@slideshow.id])
+    next_relative_slide_num = session[:slideshow_states][@slideshow.id]
+    next_absolute_slide_num = @slideshow.slide_order_hash[next_relative_slide_num]
+    debugger
+    @next_slide_subtype = Slide.find(next_absolute_slide_num)
     @next_slide = @next_slide_subtype.slide
+
+    # debugger
 
     respond_to do |format|
       format.html # show.html.erb
