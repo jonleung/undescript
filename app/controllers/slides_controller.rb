@@ -1,6 +1,7 @@
 class SlidesController < ApplicationController
   # GET /slides
   # GET /slides.xml
+    
   def index
     @slides = Slide.all
 
