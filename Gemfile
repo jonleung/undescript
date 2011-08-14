@@ -11,6 +11,9 @@ gem 'ruby-growl'
 gem 'googlecharts'
 gem 'oauth'
 gem 'garb'
+gem 'json'
+gem 'twitter'
+gem 'ruby-debug'
 # Use unicorn as the web server
 # gem 'unicorn'
 
