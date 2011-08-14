@@ -1,0 +1,27 @@
+<h1>Listing analytics_slides</h1>
+
+<table>
+  <tr>
+    <th>Username</th>
+    <th>Password</th>
+    <th>Property</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @analytics_slides.each do |analytics_slide| %>
+  <tr>
+    <td><%= analytics_slide.username %></td>
+    <td><%= analytics_slide.password %></td>
+    <td><%= analytics_slide.property %></td>
+    <td><%= link_to 'Show', analytics_slide %></td>
+    <td><%= link_to 'Edit', edit_analytics_slide_path(analytics_slide) %></td>
+    <td><%= link_to 'Destroy', analytics_slide, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Analytics slide', new_analytics_slide_path %>

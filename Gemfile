@@ -1,5 +1,4 @@
 source 'http://rubygems.org'
-
 gem 'rails', '3.0.9'
 
 # Bundle edge Rails instead:
@@ -10,6 +9,7 @@ gem 'imgur'
 gem 'class-table-inheritance'
 gem 'ruby-growl'
 gem 'googlecharts'
+gem 'oauth'
 gem 'garb'
 # Use unicorn as the web server
 # gem 'unicorn'

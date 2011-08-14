@@ -1,0 +1,2 @@
+module AnalyticsSlidesHelper
+end

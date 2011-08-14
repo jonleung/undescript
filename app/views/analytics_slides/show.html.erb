@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Username:</b>
+  <%= @analytics_slide.username %>
+</p>
+
+<p>
+  <b>Password:</b>
+  <%= @analytics_slide.password %>
+</p>
+
+<p>
+  <b>Property:</b>
+  <%= @analytics_slide.property %>
+</p>
+
+
+<%= link_to 'Edit', edit_analytics_slide_path(@analytics_slide) %> |
+<%= link_to 'Back', analytics_slides_path %>

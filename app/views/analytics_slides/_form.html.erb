@@ -1,0 +1,29 @@
+<%= form_for(@analytics_slide) do |f| %>
+  <% if @analytics_slide.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@analytics_slide.errors.count, "error") %> prohibited this analytics_slide from being saved:</h2>
+
+      <ul>
+      <% @analytics_slide.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :username %><br />
+    <%= f.text_field :username %>
+  </div>
+  <div class="field">
+    <%= f.label :password %><br />
+    <%= f.text_field :password %>
+  </div>
+  <div class="field">
+    <%= f.label :property %><br />
+    <%= f.text_field :property %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

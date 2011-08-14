@@ -1,4 +1,6 @@
 Slidefeed::Application.routes.draw do
+  resources :analytics_slides
+
   resources :rss_slides
 
   resources :video_slides
