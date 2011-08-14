@@ -5,6 +5,6 @@
 <%= link_to 'Back', slideshow_slides_path %>
 <% if @first_slide %>
 	<p>
-		<%= link_to "Start Slide Show", slideshow_slide_path(@slideshow, @first_slide) %>
+		<%= link_to "Start Slide Show", start_slideshow_path(@slideshow) %>
 	</p>
 <% end %>

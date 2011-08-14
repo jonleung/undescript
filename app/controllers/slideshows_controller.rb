@@ -47,11 +47,11 @@ class SlideshowsController < ApplicationController
     if session[:slideshow_states].nil?
       session[:slideshow_states] = []
     end
-    if session[:slideshow_states][@slideshow.id].nil?
-      session[:slideshow_states][@slideshow.id] = 1
-    end
     
-    debugger
+    session[:slideshow_states][@slideshow.id] = 1
+    
+    
+    # debugger
     
     redirect_to slideshow_slide_path(@slideshow, first_slide)
     
