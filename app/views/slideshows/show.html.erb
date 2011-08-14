@@ -10,6 +10,16 @@
   <%= @slideshow.slide_order_hash %>
 </p>
 
+<p>
+	<%= link_to "Create New Slide", new_slideshow_slide_path(@slideshow) %>
+</p>
+
+	<% if @first_slide %>
+		<p>
+			<%= link_to "Start Slide Show", slideshow_slide_path(@first_slide) %>
+		</p>
+	<% end %>
+
 
 <%= link_to 'Edit', edit_slideshow_path(@slideshow) %> |
 <%= link_to 'Back', slideshows_path %>
