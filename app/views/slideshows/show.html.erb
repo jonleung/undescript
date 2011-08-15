@@ -1,16 +1,14 @@
 <p id="notice"><%= notice %></p>
 
-<p>
+<%= link_to 'Edit', edit_slideshow_path(@slideshow) %> |
+<%= link_to 'Back', slideshows_path %>
+
+<p class="main_title">
   <b>Name:</b>
   <%= @slideshow.name %>
 </p>
 
-<p>
-  <b>Slide order hash:</b>
-  <%= @slideshow.slide_order_hash %>
-</p>
-
-<p>
+<p class="create_new">
 	<%= link_to "Create New Slide", new_slideshow_slide_path(@slideshow) %>
 </p>
 
@@ -21,5 +19,4 @@
 	<% end %>
 
 
-<%= link_to 'Edit', edit_slideshow_path(@slideshow) %> |
-<%= link_to 'Back', slideshows_path %>
+

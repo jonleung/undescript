@@ -1,10 +1,12 @@
-<h1>New slide</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Back', slideshow_slides_path %>
 <% if @first_slide %>
 	<p>
 		<%= link_to "Start Slide Show", start_slideshow_path(@slideshow) %>
 	</p>
 <% end %>
+
+<h1 class="one">New slide</h1>
+<div class="twospecial">
+	 <%= render 'form' %>
+</div>
+
+<%= link_to 'Back', slideshow_slides_path %>
