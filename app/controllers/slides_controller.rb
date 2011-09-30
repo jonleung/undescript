@@ -82,27 +82,27 @@ class SlidesController < ApplicationController
     slideshow_id = params[:slideshow_id]
     slideshow = Slideshow.find(slideshow_id)
     
-    type = params[:slide][:type]
+    subtype = params[:slide][:subtype]
     title = params[:slide][:title]
     duration = params[:slide][:duration]
     text = params[:text]
     
-    if type == "text"
+    if subtype == "text"
       @slide = TextSlide.new
       @slide.html = text
-    elsif type == "image"
+    elsif subtype == "image"
       @slide = ImageSlide.new
       @slide.image_url = text
-    elsif type == "video"
+    elsif subtype == "video"
       @slide = VideoSlide.new
       @slide.video_url = text
-    elsif type == "web"
+    elsif subtype == "web"
       @slide = WebSlide.new
       @slide.site_url = text
-    elsif type == "rss"
+    elsif subtype == "rss"
       @slide = RssSlide.new
       @slide.rss_url = text
-    elsif type == "analytics"
+    elsif subtype == "analytics"
       @slide = AnalyticsSlide.new
     #else
     #  LOG.info("ERROR\tNEW SLIDE does not fit in a type")
