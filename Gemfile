@@ -4,7 +4,9 @@ gem 'rails', '3.0.9'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'ruby-debug'
+group :development do
+	gem 'ruby-debug'
+end
 
 #hello
 gem 'sqlite3'
