@@ -24,3 +24,17 @@ class Slide < ActiveRecord::Base
   end
   
 end
+
+# == Schema Information
+#
+# Table name: slides
+#
+#  id           :integer         not null, primary key
+#  slideshow_id :integer
+#  subtype      :string(255)
+#  title        :string(255)
+#  duration     :integer
+#  created_at   :datetime
+#  updated_at   :datetime
+#
+

@@ -21,6 +21,7 @@ gem 'simple-rss'
 # gem 'twitter'
 # Use unicorn as the web server
 # gem 'unicorn'
+gem 'annotate'
 
 # Deploy with Capistrano
 # gem 'capistrano'

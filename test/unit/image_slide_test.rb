@@ -6,3 +6,14 @@ class ImageSlideTest < ActiveSupport::TestCase
     assert true
   end
 end
+
+# == Schema Information
+#
+# Table name: image_slides
+#
+#  slide_id   :integer         not null, primary key
+#  image_url  :string(255)
+#  created_at :datetime
+#  updated_at :datetime
+#
+

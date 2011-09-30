@@ -24,3 +24,14 @@ class RssSlide < ActiveRecord::Base
   end
   
 end
+
+# == Schema Information
+#
+# Table name: rss_slides
+#
+#  slide_id   :integer         not null, primary key
+#  rss_url    :string(255)
+#  created_at :datetime
+#  updated_at :datetime
+#
+
