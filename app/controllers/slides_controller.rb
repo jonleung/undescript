@@ -104,8 +104,8 @@ class SlidesController < ApplicationController
       @slide.rss_url = text
     elsif type == "analytics"
       @slide = AnalyticsSlide.new
-    else
-      LOG.info("ERROR\tNEW SLIDE does not fit in a type")
+    #else
+    #  LOG.info("ERROR\tNEW SLIDE does not fit in a type")
     end
     
     @slide.title = title

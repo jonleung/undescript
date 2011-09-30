@@ -40,7 +40,7 @@ class SlideshowsController < ApplicationController
     
     if first_slide.nil?
       redirect_to :back
-      LOG.info("you don't have any slides")
+      #LOG.info("you don't have any slides")
       return
     end
   
