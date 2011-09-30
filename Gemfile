@@ -6,7 +6,7 @@ gem 'rails', '3.0.9'
 
 # gem 'ruby-debug'
 
-
+#hello
 gem 'sqlite3'
 #gem 'imgur'
 gem 'class-table-inheritance'
