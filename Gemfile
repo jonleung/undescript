@@ -4,6 +4,9 @@ gem 'rails', '3.0.9'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
+# gem 'ruby-debug'
+
+
 gem 'sqlite3'
 #gem 'imgur'
 gem 'class-table-inheritance'
@@ -16,7 +19,6 @@ gem 'twitter'
 gem 'simple-rss'
 # gem 'json'
 # gem 'twitter'
-gem 'ruby-debug'
 # Use unicorn as the web server
 # gem 'unicorn'
 
