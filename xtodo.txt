@@ -1,0 +1,19 @@
+CONSTRUCTION
+TODO
+
+Questions:
+	Is there a better way to doing this?
+		@slideshow = Slideshow.where(:name => params[:name]).first
+
+Outline:
+	slidefeed.com
+	
+	slidefeed.com/YOUR_NAME
+	
+	slidefeed.com/pennapps/add
+	OR
+	slidefeed.com/pennapps/edit
+	
+Need to prevent people typing in spaces and only valid charachters
+	
+image uploading via paperclip

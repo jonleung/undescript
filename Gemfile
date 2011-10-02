@@ -1,29 +1,29 @@
 source 'http://rubygems.org'
 gem 'rails', '3.0.9'
 
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
-
 group :development do
 	gem 'ruby-debug'
+	gem 'annotate'
 end
 
-#hello
 gem 'sqlite3'
-#gem 'imgur'
 gem 'class-table-inheritance'
-# gem 'ruby-growl'
 gem 'googlecharts'
 gem 'oauth'
 gem 'garb'
 gem 'json'
 gem 'twitter'
 gem 'simple-rss'
+
+
+#UNUSED
+#gem 'imgur'
+# gem 'ruby-growl'
+# Try Paperclip for image uploading
 # gem 'json'
 # gem 'twitter'
 # Use unicorn as the web server
 # gem 'unicorn'
-gem 'annotate'
 
 # Deploy with Capistrano
 # gem 'capistrano'

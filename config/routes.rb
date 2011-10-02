@@ -1,6 +1,6 @@
 Slidefeed::Application.routes.draw do
   
-  root :to => "home#index"
+  root :to => 'slideshows#new'
   
   resources :slideshows do
       resources :slides
@@ -13,6 +13,9 @@ Slidefeed::Application.routes.draw do
   resources :analytics_slides
   resources :rss_slides
   resources :web_slides
+  
+  match ':name' => 'slideshows#show'
+  match ':slideshow_name/new' => 'slides#new'
   
 
 

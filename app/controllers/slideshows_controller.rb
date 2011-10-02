@@ -18,9 +18,18 @@ class SlideshowsController < ApplicationController
   # GET /slideshows/1
   # GET /slideshows/1.xml
   def show
-        
-    @slideshow = Slideshow.find(params[:id])
-    
+    if params[:name].present?
+      @slideshow = Slideshow.where(:name => params[:name]).first
+      if @slideshow.nil?
+        create(params[:name])
+        return
+      end
+    elsif params[:id].present?
+      @slideshow = Slideshow.find(params[:id])
+    else
+      
+    end
+          
     if @slideshow.slide_order_hash.present?
       @first_slide = Slide.find(@slideshow.slide_order_hash[1])
     else
@@ -75,12 +84,21 @@ class SlideshowsController < ApplicationController
 
   # POST /slideshows
   # POST /slideshows.xml
-  def create
-    @slideshow = Slideshow.new(params[:slideshow])
+  def create(url="")
+    if url.present?
+      @slideshow = Slideshow.new
+      @slideshow.name = url
+    else
+      @slideshow = Slideshow.new(params[:slideshow])
+    end
     @slideshow.slide_order_hash = {}
     respond_to do |format|
+      
       if @slideshow.save
-        format.html { redirect_to(@slideshow, :notice => 'Slideshow was successfully created.') }
+        format.html { 
+          redirect_to("/#{@slideshow.name}/new", :notice => 'Slideshow was successfully created.') } #CONSTRUCTION, finish this path after completing routes
+        
+        #format.html { redirect_to(new_slideshow_slide_path(@slideshow), :notice => 'Slideshow was successfully created.') }
         format.xml  { render :xml => @slideshow, :status => :created, :location => @slideshow }
       else
         format.html { render :action => "new" }

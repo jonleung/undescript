@@ -47,7 +47,15 @@ class SlidesController < ApplicationController
   # GET /slides/new
   # GET /slides/new.xml
   def new
-    @slideshow = Slideshow.find(params[:slideshow_id])
+    if params[:slideshow_name].present?
+      @slideshow = Slideshow.where(:name => params[:slideshow_name]).first
+      if @slideshow.nil?
+        create(params[:name])
+        return
+      end
+    elsif params[:slideshow_id].present?
+      @slideshow = Slideshow.find(params[:slideshow_id])
+    end
     
     if @slideshow.slide_order_hash.present?
       @first_slide = Slide.find(@slideshow.slide_order_hash[1])
