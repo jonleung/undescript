@@ -8,11 +8,14 @@ Questions:
 Outline:
 	slidefeed.com
 	
-	slidefeed.com/YOUR_NAME
+	slidefeed.com/name
+	slidefeed.com/name/new
+	slidefeed.com/name/edit
 	
-	slidefeed.com/pennapps/add
-	OR
-	slidefeed.com/pennapps/edit
+	slidefeed.com/name/1
+	slidefeed.com/name/2
+	slidefeed.com/name/3
+	slidefeed.com/name/4
 	
 Need to prevent people typing in spaces and only valid charachters
 	

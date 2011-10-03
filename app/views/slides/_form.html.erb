@@ -13,20 +13,22 @@
 
 	<div class="field">
 		<%= f.label :subtype %>
-		<%= f.select :subtype, %w{text image video rss analytics web} %>
+		<%= f.select :subtype, %w{text image web} %> <i>note that "text" can contain HTML</i>
 	</div>
+	
+	
 
   <div class="field">
     <%= f.label :title %><br />
     <%= f.text_field :title %>
   </div>
   <div class="field">
-    <%= f.label :duration %><br />
+    <%= f.label :duration %> <i>(in seconds)</i><br />
     <%= f.text_field :duration %>
   </div>
   <div class="field">
-		<%= text_area_tag "text" %>
-		<%= "Text" %>
+		<%= f.label :text %><br/>
+		<%= text_area_tag :text, "text: plaintext or html\n\nimage: image url\n\nweb: any website url", :cols=>40,:rows=>6, :onfocus=>"clearContents(this);" %>
   </div>
   <div class="actions">
     <%= f.submit %>

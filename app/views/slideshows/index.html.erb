@@ -6,7 +6,6 @@
     <th>Slide order hash</th>
     <th></th>
     <th></th>
-    <th></th>
   </tr>
 
 <% @slideshows.each do |slideshow| %>
@@ -14,7 +13,6 @@
     <td><%= slideshow.name %></td>
     <td><%= slideshow.slide_order_hash %></td>
     <td><%= link_to 'Show', slideshow %></td>
-    <td><%= link_to 'Edit', edit_slideshow_path(slideshow) %></td>
     <td><%= link_to 'Destroy', slideshow, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>

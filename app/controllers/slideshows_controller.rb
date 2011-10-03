@@ -36,10 +36,7 @@ class SlideshowsController < ApplicationController
       @first_slide = nil
     end
     
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @slideshow }
-    end
+    redirect_to start_slideshow_path(@slideshow)
   end
   
   def start

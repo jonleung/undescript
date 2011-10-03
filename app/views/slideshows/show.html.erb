@@ -3,10 +3,10 @@
 <%= link_to 'Edit', edit_slideshow_path(@slideshow) %> |
 <%= link_to 'Back', slideshows_path %>
 
-<p class="main_title">
+<div class="main_title">
   <b>Name:</b>
   <%= @slideshow.name %>
-</p>
+</div>
 
 <p class="create_new">
 	<%= link_to "Create New Slide", new_slideshow_slide_path(@slideshow) %>
@@ -14,7 +14,7 @@
 
 	<% if @first_slide %>
 		<p>
-			<%= link_to "Start Slide Show", "" %>
+			<%= link_to "Start Slide Show", start_slideshow_path(@slideshow) %>
 		</p>
 	<% end %>
 

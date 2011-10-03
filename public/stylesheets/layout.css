@@ -1,0 +1,30 @@
+.one {
+	text-align:center;
+	margin-top:1%;
+	font: 120px "GillSans-Light";
+}
+
+.two {
+	text-align:center;
+	font: 60px "GillSans-Light";
+}
+
+.header {
+	color:#D6D4D5;
+	text-align:right;
+}
+
+.text {
+	text-align:center;
+	font: 60px "GillSans-Light";
+	color:#4F4F4F;
+}
+
+.main_new {
+	text-align:center;
+	padding-top:200px;
+}
+
+.image {
+	text-align:center;
+}

@@ -137,8 +137,8 @@ class SlidesController < ApplicationController
     @slide = Slide.find(params[:id])
 
     respond_to do |format|
-      if @slide.update_attributes(params[:slide])
-        format.html { redirect_to(@slide, :notice => 'Slide was successfully updated.') }
+      if @slide.update_attributes(params[:id])
+        format.html { redirect_to(:back, :notice => 'Slide was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
