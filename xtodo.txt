@@ -24,7 +24,7 @@ image uploading via paperclip
 check to make sure that all links are links:
 http://mbleigh.com/2009/02/18/quick-tip-rails-url-validation.html
 
-
+Integrate twitter search
 
 
 
@@ -36,12 +36,12 @@ Twitter Search:
 new TWTR.Widget({
   version: 2,
   type: 'search',
-  search: 'bieber',
-  interval: 30000,
+  search: '@pennapps',
+  interval: 30,
   title: '',
   subject: '',
   width: 'auto',
-  height: 800,
+  height: 360,
   theme: {
     shell: {
       background: '#8ec1da',

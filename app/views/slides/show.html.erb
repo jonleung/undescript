@@ -8,10 +8,6 @@
 		<%= link_to 'Settings/New Slide', new_slideshow_slide_path(@slideshow) %>
 	</div>
 	
-	<div class="one">
-	  <%= @slide.title %>
-	</div>
-	
 	<p>
 		<%= render :partial => render_subtype_partial(@slide_subtype), :object => @slide_subtype %>
 	</p>

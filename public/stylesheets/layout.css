@@ -1,4 +1,10 @@
-.one {
+.text_title {
+	text-align:center;
+	margin-top:175px;
+	font: 120px "GillSans-Light","Century Gothic";
+}
+
+.image_title {
 	text-align:center;
 	margin-top:1px;
 	font: 120px "GillSans-Light","Century Gothic";
