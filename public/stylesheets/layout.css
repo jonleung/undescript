@@ -1,12 +1,12 @@
 .one {
 	text-align:center;
 	margin-top:1px;
-	font: 120px "GillSans-Light";
+	font: 120px "GillSans-Light","Century Gothic";
 }
 
 .two {
 	text-align:center;
-	font: 60px "GillSans-Light";
+	font: 60px "GillSans-Light","Century Gothic";
 }
 
 .header {
@@ -16,16 +16,37 @@
 
 .text {
 	text-align:center;
-	font: 60px "GillSans-Light";
+	font: 60px "GillSans-Light","Century Gothic";
 	color:#4F4F4F;
 }
 
 .main_new {
 	text-align:center;
 	padding-top:200px;
+	font: 30px "GillSans-Light","Century Gothic";
+	font-weight:bold;
 }
 
 .image {
 	text-align:center;
 	margin-top:120px;
+}
+
+.by_the_way {
+	text-align:center;
+	font: 20px "GillSans-Light","Century Gothic";
+}
+
+.pre_alpha {
+	
+	bottom: 10px;
+	border: 1px solid transparent;
+	
+}
+
+.pre_alpha_text {
+	margin-top:420px;
+	text-align:center;
+	font: 15px "GillSans-Light","Century Gothic";
+	
 }
