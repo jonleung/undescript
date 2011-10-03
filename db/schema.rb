@@ -53,7 +53,7 @@ ActiveRecord::Schema.define(:version => 20110814224217) do
 
   create_table "text_slides", :id => false, :force => true do |t|
     t.integer  "slide_id",   :null => false
-    t.string   "html"
+    t.text     "html"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

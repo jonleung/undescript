@@ -1,7 +1,7 @@
 class CreateTextSlides < ActiveRecord::Migration
   def self.up
     create_table :text_slides, {:inherits => :slide} do |t|
-      t.string :html
+      t.text :html
 
       t.timestamps
     end

@@ -112,8 +112,10 @@ class SlidesController < ApplicationController
       @slide.rss_url = text
     elsif subtype == "analytics"
       @slide = AnalyticsSlide.new
-    #else
-    #  LOG.info("ERROR\tNEW SLIDE does not fit in a type")
+    else
+      flash[:notice] = "The user was successfully created"
+      redirect_to :back, :flash => { :error => "The user was successfully created" }
+      return
     end
     
     @slide.title = title
