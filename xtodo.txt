@@ -27,7 +27,11 @@ http://mbleigh.com/2009/02/18/quick-tip-rails-url-validation.html
 Integrate twitter search
 
 
+You need to make the slide creation process more intuitive, make it so that you can just type, so you type a title, press tab, choose a time, etc. And whenver you do anything to the box, javascript generates a preview to what it will look like (or perhaps this can all be javascript based), so as you type the title, it will type out a title. This little dialogue box should be able to be put around.
 
+Force good design, there are only so many templates, people can submit new templates but they must be approved.
+
+Also, you should be able drag anything in slidefeed in the order of the slides
 
 
 Twitter Search:
